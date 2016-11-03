@@ -8,23 +8,18 @@ The player will have an inventory, and will be able to pick up items, and use th
 ## Development plan
 
 ### Basics
-* The player should be able to look around, see it's environment. it is possible to be able to look to another space, but not move there.
-* The player should be able to move from space to space, only if there is a passage. Directions are north, south, east and west.
-
+* The player should be able to look around, see it's environment. Spaces can be connected as passible or non-passible.
+* Passable connections can be navigated. Supported directions are north, south, east and west. If there is a passable connection that is not linked to anything, there is a black, inpenetrable force field.
+* Unpassable connections influence that the player sees. If There is a non-passible connection that is not linked to anything, it displays a mysterious swirling mist.
+* Commands: look, go [direction]
 
 ### Items
 * The player will be able to find and pickup items. Items will go into the inventory
 * The player will be able to see what is in his inventory.
 * The player will be able to combine or use items to interact with the world.
+* commands: inventory, take, drop
 
 ### Critters
 * There will be different critters.
 * Critters will move on their own account. If and how they move is based on the critter
-* Critters may attack each other or the player. 
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+* Critters may attack each other or the player.

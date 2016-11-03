@@ -1,13 +1,22 @@
-(ns cl-adventure.command)
-
-(defn find-player [game] (:player game))
-(defn find-location [game player]
-  (first (filter #(= (:id %) (:location player))
-          (:places game))))
-
-(defn look [game]
-  "Describe the current location of the player"
-  (let [location (find-location game (find-player game))]
-    (str "Je bent in " (:name location)) ))
+(ns cl-adventure.command
+  (:require [cl-adventure.world :refer :all]))
 
 
+(defn desc-location [] (str "You are in " (:name (find-place))))
+(defn desc-views [] "Todo")
+(defn desc-moves [] "Todo")
+
+(defn look []
+  "Describe the current location of the player
+  this contains:
+    - A description of the place you are in
+    - A description of the directions you can look, and what you see
+    - A description of the directions you can move"
+  (str
+    (desc-location)
+    (desc-views)
+    (desc-moves))
+
+
+;; Test
+(look)
